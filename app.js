@@ -614,5 +614,175 @@ friends.forEach((friend, index) => {
 
   console.log(result, result2);
 
+  //Accumulator
+
+  const movement = [300, -50, 700, 400, -300];
+
+  const total = movement.reduce((acc, val) => {
+    return acc + val;
+  }, 0);
+
+  console.log(`Your Total bill is ${total}`);
+
+  const desc = ['Adenike', 'Adeshola', 45, 'Entreprenuer', ['Dammy','Tunde']]
+
+  const user = {
+    firstName: 'Hope',
+    lastName: 'Ajibola',
+    age: 50,
+    job: 'Banker',
+    friends: ['Mosun','Stella', 'Bola',]
+  }
+  console.log(user);
+
+  // ACCESS properties from an object
+  // Dot notation, bracket
+  console.log((user.firstName));
+  console.log(user.age);
+
+  // objName['propertyName']
+  console.log(user["friends"].includes('Latifat'));
+  const nameKey = "Name";
+  console.log(user["last" +nameKey]);
+
+//adding properties to an object
+user.hasACar = true;
+user.status ="Married";
+console.log(user);
+
+//remove properties
+
+// delete
+delete user.friends;
+console.log(user);
+
+const book = {
+  title: "Rich Dad Poor Dad",
+  author: "Robert Kiyosaki",
+  year: 2001,
+  pages: 207,
+  similarBooks: [
+    "Richest man in Babylon",
+    "The Monk who sold his Ferrari",
+    "Think and Grow Rich",
+  ],
+  publisher: "Macmillian",
+  getSummary: function () {
+    return `The title of the book is ${this.title} written by ${this.author} in the year ${this.year}`
+    // the title is rich poor dad written by robert in the year 2001
+    console.log(this.author, this.year);
+    console.log("This is the book summary");
+  },
+ };
+ console.log(book);
+ // object methods
+
+ book.getSummary();
+
+ console.log(this);
+
+ //object destructuring
+ //const {propertNames} = objName
+ 
+ //publisher, author, year
+ const { publisher, author, pages, year } = book;
+ console.log(publisher);
+ //this
+ const person = {
+  name: 'John Doe',
+  height: 56,
+  hasALisence: false,
+
+ }
+ const users = [ 
+{
+  name: "yJohn",
+  userName: "_Johnny123",
+  password: "2345678956789ifg",
+  age: 32,
+},
+{ name: "Jane", userName: "jane@234", password: "45678gjhgfdfg", age:17},
+{ name: "Mario", userName: "maryBoy56", password: "5dfghjkll", age:45},
+{ name: "Kerry", userName: "John12345", password: "5fghjklhjkl", age:16},
+ ]
+// age >= 18
+
+
+ const canView = users.filter((user) => {
+  return user.age >= 18;
+ });
+ console.log(canView);
+ // j
+
+ const search = users.filter((user) => {
+  return user.name.includes("J") || user.userName.includes("J");
+ });
+ console.log(search);
+
+ const ages = [32, 54, 16, 65,89];
+ const newAge = [2, ...ages, 76, 80]
+ console.log(newAge);
+
+ // const [varNames] = arrName
+
+ const [...rest] = ages;
+ //console.log(h);
+ console.log(rest);
+ // Ihs and spread rhs ...
+
+ //MATH OBJECT - 8 math constants
+ //console.log(Math.PI);
+
+ //rest and spread operator
+ //array destructuring
+ //math object
+ // sqrt, trunc, round, random, ceil, 7.3.7.1floor,
+
+ // sqrt
+ console.log(Math.sqrt(25));
+// trunc 
+console.log(Math.trunc(25.77087));
+// round
+console.log(Math.round(25.77087));
+//ceil- ceiling round the figure up
+console.log(Math.ceil(25.77087));
+// floor- floor round the figure down
+console.log(Math.floor(25.77087));
+// random- it generate number between 0 and 1
+console.log(Math.random() * 2 + 1);
+
+// random games
+const computer = ["rock", "paper", "scissors"];
+console.log(computer[2]);
+
+const randomNum = Math.trunc(Math.random() * 3); // 0 1 2
+const computerChoice = computer[randomNum];
+const playerChoice = "rock";
+
+const checkWin = function (computer, player) {
+  if (computer === player) {
+    return "This is a tie";
+  } else if (player === "rock") {
+    if (computer === "scissors") {
+      return "Rock smashes scissors, You win!";
+    } else {
+      return "Paper covers rock, You Lose!";
+    }
+  } else if (player === "paper") {
+    if (computer === "rock") {
+      return "Paper covers rock, You win!";
+    } else {
+      return "Scissors cut paper, You Lose!";
+    }
+   }else if (player === "scissors") {
+    if (computer === "paper") {
+      return "Scissors cut paper, You win!";
+    } else {
+      return "Rock smashes scissors, You lose!";
+    }
+   }
+};
+const result4 = checkWin(computerChoice, playerChoice);
+console.log(result4);
 // //Null
 // //Undefined
