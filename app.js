@@ -784,5 +784,112 @@ const checkWin = function (computer, player) {
 };
 const result4 = checkWin(computerChoice, playerChoice);
 console.log(result4);
+
+//Synchronouslog
+// Asynchronous js
+console.log(1);
+// taking time log(take time)
+console.log(2);
+
+// for (i = 0; i < 1000; i==) {
+// console.log(i);
+// }
+//console.log("ANOTHER THING");
+console.log("first");
+setTimeout(() => {
+  console.log("second");
+}, 15000
+);
+
+setInterval(() => {
+  console.log("I am in the interval");
+}, 2000);
+
+console.log("Third");
+
+//DOM
+
+// non blocking code
+console.log("A");
+console.log("B");
+setTimeout(() => {
+  console.log("IN THE TIMEOUT");
+}, 5000);
+
+console.log("C after the timeout");
+
+const myInterval = setInterval(() => {
+  console.log("Welcome user");
+}, 3000);
+
+setTimeout(() => {
+  clearInterval(myInterval);
+}, 15000);
+
+
+//FETCHING DATA - APIs - application programming interface
+//JSON - javascript object notation
+// data - array
+
+// promises - is a container for future value
+
+const url = "https://jsonplaceholder.typicode.com/users";
+
+// fetch function - is used to fetch external function
+
+fetch(url).then((response) => {
+  console.log(response);
+  return response.json();
+})
+.then((users) => {
+  console.log(users);
+});
+//
+
+const fetchData = (site) => {
+  fetch(site)
+  .then((res) => res.json())
+  .then((data) => console.log((data))
+   )};
+
+//catch
+
+fetchData(url);
+fetchData("https://jsonplaceholder.typicode.com/post");
+
+//async / await
+
+//try and catch block
+try {
+  console.log(retyu);
+} catch (error) {
+  console.log(error);
+}
+
+// async await
+const getData = async (site) => {
+  try {
+    const response = await fetch(site);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+getData(url);
+
+// STORAGE API
+// local storage - setItem, getItem, removeItem, clear, length
+localStorage.setItem("name", "Ola Ola");
+localStorage.setItem("token", "23456786780");
+
+const res1ut1 = localStorage.getItem("name");
+console.log(result);
+
+localStorage.removeItem("token");
+
+const len = localStorage.length;
+console.log(len);
+localStorage.clear()
 // //Null
 // //Undefined
