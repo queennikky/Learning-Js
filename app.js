@@ -883,13 +883,13 @@ getData(url);
 localStorage.setItem("name", "Ola Ola");
 localStorage.setItem("token", "23456786780");
 
-const res1ut1 = localStorage.getItem("name");
-console.log(result);
+const results = localStorage.getItem("name");
+console.log(results);
 
 localStorage.removeItem("token");
 
 const len = localStorage.length;
 console.log(len);
-localStorage.clear()
+//localStorage.clear()
 // //Null
 // //Undefined
